@@ -6591,9 +6591,9 @@ If ARG is negative, move forwards."
   (cl-destructuring-bind (i1 _l1 s1 e1) chunk1
     (cl-destructuring-bind (i2 l2 s2 e2) chunk2
       (cond ((= e1 s2)
-             (list (append i1 i2) l2 s1 e2))
+             (list (append i1 i2) (+ l1 l2) s1 e2))
             ((= e2 s1)
-             (list (append i2 i1) l2 s2 e1))
+             (list (append i2 i1) (+ l2 l1) s2 e1))
             (t (error "Invalid chunks"))))))
 
 (set-keymap-parent dime-inspector-mode-map dime-parent-map)
