@@ -4433,7 +4433,7 @@ source-location."
 This is used by `dime-goto-next-xref'")
 
 (defun dime-show-xref-buffer (xrefs _type _symbol project)
-  (dime-with-xref-buffer (type symbol project)
+  (dime-with-xref-buffer (_type _symbol project)
     (dime-insert-xrefs xrefs)
     (setq dime-next-location-function 'dime-goto-next-xref)
     (setq dime-previous-location-function 'dime-goto-previous-xref)
@@ -4792,7 +4792,7 @@ NB: Does not affect dime-eval-macroexpand-expression"
     (let* ((start (car bounds))
                    (end (cdr bounds))
                    (point (point))
-                   (project dylan-buffer-module)
+                   (_project dylan-buffer-module)
                    (buffer (current-buffer)))
       (dime-eval-async
        `(,expander ,string)
@@ -5544,7 +5544,7 @@ See `dime-output-target-to-marker'."
 (defun dime-debug-default-action-mouse (event)
   "Invoke the action pointed at by the mouse."
   (interactive "e")
-  (cl-destructuring-bind (_mouse-1 (_w pos &rest rest)) event
+  (cl-destructuring-bind (_mouse-1 (_w pos _)) event
     (save-excursion
       (goto-char pos)
       (let ((fn (get-text-property (point) 'dime-debug-default-action)))
