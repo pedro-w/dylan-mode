@@ -2937,7 +2937,7 @@ first element of the source-path redundant."
                      (when more (down-list 1))))
           ;; Align at beginning
           (dime-forward-sexp)
-          (thing-at-point--beginning-of-sexp))
+          (beginning-of-thing 'sexp))
       (error (goto-char origin)))))
 
 
@@ -3224,7 +3224,7 @@ are supported:
         (dime-search-call-site fname))
       (when (cl-getf hints :align)
         (dime-forward-sexp)
-        (thing-at-point--beginning-of-sexp)))
+        (beginning-of-thing 'sexp)))
     (point)))
 
 
