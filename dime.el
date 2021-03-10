@@ -60,6 +60,7 @@
 (require 'etags)
 (require 'font-lock)
 (require 'gud)
+(require 'gv)
 (require 'hideshow)
 (require 'outline)
 (require 'pp)
