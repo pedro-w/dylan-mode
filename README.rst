@@ -26,7 +26,7 @@ to your .emacs file::
 To configure DIME/dswank add these lines to your .emacs file, changing
 YYYY.nn as appropriate for your installed release of Open Dylan::
 
-  (dime-setup '(dime-dylan dime-repl dime-compiler-notes-tree))
+  (dime-setup '(dime-browse dime-repl dime-note-tree))
   (setq dime-dylan-implementations
         '((opendylan ("/opt/opendylan-YYYY.nn/bin/dswank")
                      :env ("OPEN_DYLAN_USER_REGISTRIES=/opt/opendylan-YYYY.nn/sources/registry"))))
@@ -46,4 +46,4 @@ It originates from different sources:
 * dylan-mode.el is from CMU
 * dylan-opt.el from Harlequin
 * dylan-dime.el from Dylan Hackers
-* dime.el, dime-repl.el, dime-compiler-notes-tree.el from SLIME
+* dime.el, dime-repl.el, dime-note-tree.el from SLIME
